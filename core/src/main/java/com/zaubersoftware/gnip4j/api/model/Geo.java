@@ -5,8 +5,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-
 /**
  * <p>
  * Java class for anonymous complex type.
@@ -18,17 +16,15 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = { "coordinates" })
 public class Geo {
-    @JsonIgnore(value = true)
+    @XmlAttribute(required = true)
     private double []coordinates;
     @XmlAttribute(required = true)
     private String type;
 
-    @JsonIgnore
     public final double []getCoordinates() {
         return coordinates;
     }
 
-    @JsonIgnore
     public void setCoordinates(final double []coordinates) {
         this.coordinates = coordinates;
     }
